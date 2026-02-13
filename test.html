@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>社会问题解释谱系测试</title>
+  <meta name="description" content="社会问题解释谱系测试：测理解路径，输出雷达图与理论谱系。" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">
+        <a class="brand-link" href="index.html">
+          <div class="brand-icon">🏙️</div>
+          <div class="brand-text">
+            <div class="brand-title">社会问题解释谱系测试</div>
+            <div class="brand-sub">理解路径 × 理论谱系</div>
+          </div>
+        </a>
+      </div>
+      <nav class="topnav">
+        <a class="navlink" href="#start">测试</a>
+        <a class="navlink" href="#result">结果</a>
+        <a class="navlink" href="#encyclopedia">百科</a>
+        <a class="navlink" href="#about">说明</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="start" class="card">
+      <div class="section-head">
+        <div>
+          <h1 class="h1-tight">开始测试</h1>
+          <div class="muted">每题选择 1–7：1 更靠近左侧，7 更靠近右侧（4 为中间）。</div>
+        </div>
+        <div class="head-actions">
+          <button id="btnResume" class="btn" type="button">继续上次</button>
+          <button id="btnReset" class="btn danger" type="button">清空重来</button>
+        </div>
+      </div>
+
+      <div class="progress">
+        <div class="progress-bar"><div id="progressFill" class="progress-fill"></div></div>
+        <div class="progress-meta">
+          <span id="progressText">0 / 24</span>
+          <span id="etaText" class="muted">约 6 分钟</span>
+        </div>
+      </div>
+
+      <div id="questionCard" class="qcard">
+        <!-- injected -->
+      </div>
+
+      <div class="qnav">
+        <button id="btnPrev" class="btn" type="button">上一题</button>
+        <button id="btnNext" class="btn primary" type="button">下一题</button>
+      </div>
+
+      <div class="muted small">
+        作答会保存在本机浏览器（localStorage），刷新页面不会丢失。
+      </div>
+    </section>
+
+    <section id="result" class="card">
+      <div class="section-head">
+        <div>
+          <h1 class="h1-tight">结果</h1>
+          <div class="muted">先看你的理解路径（雷达），再看理论谱系与生活解释。</div>
+        </div>
+        <div class="head-actions">
+          <button id="btnRecalc" class="btn" type="button">重新计算</button>
+          <button id="btnShare" class="btn" type="button">复制结果摘要</button>
+        </div>
+      </div>
+
+      <div id="resultEmpty" class="callout">
+        <div class="callout-title">还没有结果</div>
+        <div class="callout-body">完成 24 题后这里会自动生成结果。</div>
+      </div>
+
+      <div id="resultBody" style="display:none;">
+        <div class="result-grid">
+          <div class="card inner">
+            <div class="result-title">你的主流派</div>
+            <div id="primarySchool" class="result-primary">—</div>
+            <div id="primarySummary" class="muted"></div>
+
+            <div id="secondaryWrap" class="secondary-wrap" style="display:none;">
+              <div class="result-title">可能的次流派（混合型）</div>
+              <div id="secondarySchool" class="result-secondary">—</div>
+              <div id="secondaryNote" class="muted small"></div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="result-title">相似度（内部）</div>
+            <div id="simList" class="simlist"></div>
+          </div>
+
+          <div class="card inner">
+            <div class="result-title">你的理解路径（5 轴雷达图）</div>
+            <canvas id="radar" width="520" height="360" class="radar"></canvas>
+            <div id="radarText" class="muted small"></div>
+          </div>
+        </div>
+
+        <div id="resultModules" class="modules">
+          <!-- injected modules -->
+        </div>
+      </div>
+    </section>
+
+    <section id="encyclopedia" class="card">
+      <div class="section-head">
+        <div>
+          <h1 class="h1-tight">派别百科</h1>
+          <div class="muted">卡片列表 → 点击展开（一次只展开一个），移动端阅读友好。</div>
+        </div>
+      </div>
+
+      <div id="encyList" class="ency-list"></div>
+      <div id="encyDetail" class="ency-detail" style="display:none;"></div>
+    </section>
+
+    <section id="about" class="card">
+      <h1 class="h1-tight">说明</h1>
+      <div class="muted">
+        这是“谱系型测试”：测的是你常用的解释/理解路径，并把它映射到历史上真实存在的理论流派。
+        它不用于判断对错、好坏，也不替代专业心理咨询或医学诊断。
+      </div>
+
+      <div class="grid2" style="margin-top:14px;">
+        <div class="callout">
+          <div class="callout-title">隐私</div>
+          <div class="callout-body">
+            所有计算都在浏览器本地完成。本站不上传答案、不记录个人身份信息。
+          </div>
+        </div>
+        <div class="callout">
+          <div class="callout-title">使用建议</div>
+          <div class="callout-body">
+            如果结果让你不舒服，先把它当作“你常用的一套解释模型”，而不是“你是谁”。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer muted">
+      <div>V2 · JSON 驱动 · 纯静态 · GitHub Pages 可部署</div>
+    </footer>
+  </main>
+
+  <script src="assets/test.js"></script>
+</body>
+</html>
