@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>结果 · 社会问题解释谱系测试</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-page="result">
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="brand">
+      <a class="brand-link" href="index.html">
+        <div class="brand-icon">🏙️</div>
+        <div class="brand-text">
+          <div class="brand-title">社会问题解释谱系测试</div>
+          <div class="brand-sub">解释路径 × 理论谱系</div>
+        </div>
+      </a>
+    </div>
+    <nav class="topnav">
+      <a class="navlink" href="test.html">测试</a>
+      <a class="navlink" href="result.html">结果</a>
+      <a class="navlink" href="encyclopedia.html">百科</a>
+      <a class="navlink" href="about.html">说明</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="card">
+    <div class="section-head">
+      <div>
+        <h1 class="h1-tight">结果</h1>
+        <div class="muted">先看你的解释路径（雷达），再看理论谱系与生活解释。</div>
+      </div>
+      <div class="head-actions">
+        <button id="btnRecalc" class="btn" type="button">重新计算</button>
+        <button id="btnShare" class="btn" type="button">复制结果摘要</button>
+      </div>
+    </div>
+
+    <div id="resultEmpty" class="callout">
+      <div class="callout-title">还没有结果</div>
+      <div class="callout-body">请先完成 24 题（可选加测），再回来查看结果。</div>
+      <div style="margin-top:10px;">
+        <a class="btn primary" href="test.html">去做测试</a>
+      </div>
+    </div>
+
+    <div id="resultBody" style="display:none;">
+      <div class="result-grid">
+        <div class="card inner">
+          <div class="result-title">你的主流派</div>
+          <div id="primarySchool" class="result-primary">—</div>
+          <div id="primarySummary" class="muted"></div>
+
+          <div id="secondaryWrap" class="secondary-wrap" style="display:none;">
+            <div class="result-title">可能的次流派（混合型）</div>
+            <div id="secondarySchool" class="result-secondary">—</div>
+            <div id="secondaryNote" class="muted small"></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="result-title">相似度（内部）</div>
+          <div id="simList" class="simlist"></div>
+        </div>
+
+        <div class="card inner">
+          <div class="result-title">你的解释路径（5 轴雷达图）</div>
+          <canvas id="radar" width="520" height="360" class="radar"></canvas>
+          <div id="radarText" class="muted small"></div>
+        </div>
+      </div>
+
+      <div id="resultModules" class="modules"></div>
+      <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="btn" href="encyclopedia.html">去看派别百科</a>
+        <a class="btn" href="test.html">重新做一遍</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true">
+  <div class="modal">
+    <h3 id="modalTitle">术语解释</h3>
+    <div id="modalBody" class="modal-body"></div>
+    <div class="modal-actions">
+      <button id="modalClose" class="btn primary" type="button">知道了</button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -12,3 +12,11 @@ python -m http.server 8080
 2. 上传本目录所有文件
 3. Actions 会发布到 gh-pages
 4. Settings → Pages → gh-pages / root
+
+
+## 页面结构（UI Fix）
+- index.html 首页
+- test.html 答题页（仅题目）
+- result.html 结果页
+- encyclopedia.html 派别百科
+- about.html 说明

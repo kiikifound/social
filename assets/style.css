@@ -326,3 +326,14 @@ h2{font-size:18px; margin:0 0 10px;}
 
 .qhead{display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:8px;}
 .qhead-left{font-size:13px; color: var(--muted); font-weight:800;}
+
+
+/* --- Glossary modal + chips --- */
+.chiprow{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;}
+.chip{font-size:12px; border:1px solid var(--line); border-radius:999px; padding:6px 10px; background:#fff; color:var(--muted); cursor:pointer;}
+.chip:hover{color:var(--text); box-shadow: var(--shadow2);}
+.modal-backdrop{position:fixed; inset:0; background:rgba(15,23,42,.45); display:none; align-items:center; justify-content:center; padding:16px; z-index:50;}
+.modal{background:#fff; border:1px solid var(--line); border-radius:18px; box-shadow: var(--shadow); max-width:720px; width:100%; padding:16px;}
+.modal h3{margin:0 0 8px; font-size:16px;}
+.modal .modal-body{color:var(--muted); line-height:1.7; font-size:13px;}
+.modal .modal-actions{display:flex; justify-content:flex-end; gap:10px; margin-top:12px; flex-wrap:wrap;}

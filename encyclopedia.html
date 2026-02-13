@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>派别百科 · 社会问题解释谱系测试</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-page="encyclopedia">
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="brand">
+      <a class="brand-link" href="index.html">
+        <div class="brand-icon">🏙️</div>
+        <div class="brand-text">
+          <div class="brand-title">社会问题解释谱系测试</div>
+          <div class="brand-sub">解释路径 × 理论谱系</div>
+        </div>
+      </a>
+    </div>
+    <nav class="topnav">
+      <a class="navlink" href="test.html">测试</a>
+      <a class="navlink" href="result.html">结果</a>
+      <a class="navlink" href="encyclopedia.html">百科</a>
+      <a class="navlink" href="about.html">说明</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="card">
+    <div class="section-head">
+      <div>
+        <h1 class="h1-tight">派别百科</h1>
+        <div class="muted">卡片列表 → 点击展开（一次只展开一个），移动端阅读友好。</div>
+      </div>
+    </div>
+    <div id="encyList" class="ency-list"></div>
+    <div id="encyDetail" class="ency-detail" style="display:none;"></div>
+  </section>
+</main>
+
+<div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true">
+  <div class="modal">
+    <h3 id="modalTitle">术语解释</h3>
+    <div id="modalBody" class="modal-body"></div>
+    <div class="modal-actions">
+      <button id="modalClose" class="btn primary" type="button">知道了</button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
